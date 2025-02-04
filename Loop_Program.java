@@ -69,28 +69,20 @@ public class Loop_Program {
                 break;
 
             case 4:
-                System.out.println("Enter a number:");
+               System.out.println("Enter a number:");
                 int num3 = sc.nextInt();
                 int originalNumber = num3;
-                int remainder, result = 0, n = 0;
+                int remainder,sum = 0;
 
-                int temp = originalNumber;
-                while (temp != 0) {
-                    temp /= 10;
-                    n++;
+                while (num3 > 0) {
+                    remainder = num3 % 10;
+                    sum=sum+remainder*remainder*remainder;
+                    num3=num3/10;
                 }
-
-                temp = originalNumber;
-                while (temp != 0) {
-                    remainder = temp % 10;
-                    result += Math.pow(remainder, n);
-                    temp /= 10;
-                }
-
-                if (result == num3) {
-                    System.out.println(num3 + " is an Armstrong number.");
+                if (originalNumber==sum) {
+                    System.out.println( originalNumber+ " is an Armstrong number.");
                 } else {
-                    System.out.println(num3 + " is not an Armstrong number.");
+                    System.out.println(originalNumber + " is not an Armstrong number.");
                 }
                 break;
 
@@ -100,4 +92,3 @@ public class Loop_Program {
         sc.close();
     }
 }
-	
